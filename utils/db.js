@@ -47,7 +47,7 @@ export class DBClient {
     const myDB = this.myClient.db();
     const myCollection = myDB.collection('users');
     if ('_id' in filters) {
-      // This is the eslint-disable-next-line no-param-reassign
+      // eslint-disable-next-line
       filters._id = ObjectId(filters._id);
     }
     return myCollection.findOne(filters);
@@ -58,7 +58,7 @@ export class DBClient {
     const myCollection = myDB.collection('files');
     const idFilters = ['_id', 'userId', 'parentId'].filter((prop) => prop in filters && filters[prop] !== '0');
     idFilters.forEach((i) => {
-      // This is the eslint-disable-next-line no-param-reassign
+      // eslint-disable-next-line
       filters[i] = ObjectId(filters[i]);
     });
     return myCollection.findOne(filters);
