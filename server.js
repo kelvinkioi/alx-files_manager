@@ -19,7 +19,7 @@ const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// Graceful shutdown
+// shutdown
 const handler = () => shutdown(server);
 process.on('SIGINT', handler);
 process.on('SIGTERM', handler);
